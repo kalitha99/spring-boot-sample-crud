@@ -2,7 +2,10 @@ package com.crudsample.crudsample.controller;
 
 import com.crudsample.crudsample.model.student;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +24,12 @@ public class studentcontroller {
 	public String add(@RequestBody student student) {
 		studentservice.saveStudent(student);
 		return "new student added";
+		
+	}
+	
+	@GetMapping("/getAll")
+	public   List<student> getAllStudents(){
+		return studentservice.getAllStudents();
 		
 	}
 	

@@ -1,5 +1,7 @@
 package com.crudsample.crudsample.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,4 +20,12 @@ public class studentservicesimplimentation implements studentservice{
 		return studentRepository.save(student);
 		
 	}
+
+	@Override
+	public List<student> getAllStudents() {
+		
+		return studentRepository.findAll();
+	}
+	
+	
 }
